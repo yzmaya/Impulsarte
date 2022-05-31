@@ -63,18 +63,20 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <h1 class="h4">Agregar Actividad</h1>
+              <h1 class="h4">Agregar Trabajo</h1>
 
               <form id="task-form">
                 <label for="title">Actividad:</label>
-                <input
-                  type="text"
-                  id="task-title"
-                  class="form-control mb-3"
-                  class="My First Title"
-                  placeholder="Vis a vis, referencia, negocio concretado, invitado"
-                  autofocus
-                />
+               
+
+                <select class="form-select" id="task-title">
+                  <option>Referencia</option>
+                  <option>Negocio concretado</option>
+                  <option>Invitado</option>
+                  <option>Bis a Bis</option>
+                 
+                </select>
+              
 
                 <label for="description">Descripción:</label>
                 <textarea

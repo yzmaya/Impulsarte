@@ -57,25 +57,25 @@ firebase.auth().onAuthStateChanged(function(user) {
   
     window.location.href = "home.html"
 
-   }else if((userEmail == "asistentefeger@gmail.com") && (userPwd == "Feger2022")){
+   }else if((userEmail == "rodolfo@impulsarte.org") && (userPwd == "Senado2022")){
     localStorage.setItem("UserID", "DxotYIXpNlaYMpd1G2owqR76iy32");
-    localStorage.setItem("UserName", "Areli Muñoz");
+    localStorage.setItem("UserName", "Rodolfo Martínez");
   
     window.location.href = "home.html"
 
-   }else if((userEmail == "asesorventasfeger@gmail.com") && (userPwd == "Feger2022")){
+   }else if((userEmail == "asesorventasfeger@gmail.com") && (userPwd == "Senado2022")){
     localStorage.setItem("UserID", "ZCZa6bwW8uQNjkdLyNPBqpNjyp13");
     localStorage.setItem("UserName", "Asesor ventas");
   
     window.location.href = "home.html"
 
-   }else if((userEmail == "ivonnemtzsoto@gmail.com") && (userPwd == "Feger2022")){
+   }else if((userEmail == "ivonnemtzsoto@gmail.com") && (userPwd == "Senado2022")){
     localStorage.setItem("UserID", "CBNvrE3hCpNxquJSN4WOyDQj23D2");
     localStorage.setItem("UserName", "Ivonne Martínez");
   
     window.location.href = "home.html"
    
-   }else if((userEmail == "baruch.beltran@belsua.com") && (userPwd == "Feger2022")){
+   }else if((userEmail == "baruch.beltran@belsua.com") && (userPwd == "Senado2022")){
     localStorage.setItem("UserID", "uAG41FLLXJaw2iUnIRyoOUCc8WF3");
     localStorage.setItem("UserName", "Baruch Beltrán");
   
