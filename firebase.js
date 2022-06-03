@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-
+//import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -11,6 +11,7 @@ import {
   getDocs,
   onSnapshot,
   addDoc,
+  setDoc,
   deleteDoc,
   doc,
   getDoc,
@@ -33,61 +34,57 @@ const firebaseConfig = {
 };
 var userID = localStorage.getItem("UserID");
 var username = localStorage.getItem("UserName");
-console.log(userID)
+var mail = localStorage.getItem("UserMail");
+console.log("users/"+userID)
+var holas = "/users/"+userID+"/tareas";
+var hola = "/users";
 console.log(username)
-document.getElementById('nombre').innerHTML = username;
+document.getElementById('nombre').innerHTML = mail;
 
 
-var nestor = "P2ry8hu4kafUbPb6UAnibTP89Ck2"
-var judith = "WOcG0OA4MxQNjh2tNdX5s32tXfJ3"
-var rodolfo = "DxotYIXpNlaYMpd1G2owqR76iy32"
-var asesorventas = "ZCZa6bwW8uQNjkdLyNPBqpNjyp13"
-var ivonnem = "CBNvrE3hCpNxquJSN4WOyDQj23D2"
-var baruch = "uAG41FLLXJaw2iUnIRyoOUCc8WF3"
+
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 
 
 export const db = getFirestore();
 
+
+
+
+
 /**
  * Save a New Task in Firestore
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
  */
-export const saveTask = (title, description) =>
-  addDoc(collection(db, userID), { title, description });
+//export const saveTask = (title, description) =>
+  //addDoc(collection(db,  'users'), { title, description });
+
+  export const saveTask = (title, description) =>
+  addDoc(collection(db,  holas),  { title, description });
 
   export const onGetTasks = (callback) =>
-  onSnapshot(collection(db, userID), callback);
+  onSnapshot(collection(db, holas), callback); 
 
 export const onGetTasks2 = (callback) =>
-  onSnapshot(collection(db, nestor), callback);
+  onSnapshot(collection(db, holas), callback);
 
-  export const onGetTasks3 = (callback) =>
-  onSnapshot(collection(db, judith), callback);
 
-  export const onGetTasks4 = (callback) =>
-  onSnapshot(collection(db, rodolfo), callback);
+  export const onGetTasks3 = (id) =>
+  getDoc(doc(db, "users", id));
 
-  export const onGetTasks5 = (callback) =>
-  onSnapshot(collection(db, asesorventas), callback);
-
-  export const onGetTasks6 = (callback) =>
-  onSnapshot(collection(db, ivonnem), callback);
-
-  export const onGetTasks7 = (callback) =>
-  onSnapshot(collection(db, baruch), callback);
+  
 
 /**
  *
  * @param {string} id Task ID
  */
-export const deleteTask = (id) => deleteDoc(doc(db, userID, id));
+export const deleteTask = (id) => deleteDoc(doc(db, holas, id));
 
-export const getTask = (id) => getDoc(doc(db, userID, id));
+export const getTask = (id) => getDoc(doc(db, holas, id));
 
 export const updateTask = (id, newFields) =>
-  updateDoc(doc(db, userID, id), newFields);
+  updateDoc(doc(db, holas, id), newFields);
 
 export const getTasks = () => getDocs(collection(db, userID));
