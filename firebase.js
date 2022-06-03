@@ -36,7 +36,17 @@ var userID = localStorage.getItem("UserID");
 var username = localStorage.getItem("UserName");
 var mail = localStorage.getItem("UserMail");
 console.log("users/"+userID)
-var holas = "/users/"+userID+"/tareas";
+var nyzmaya = "/users/P2ry8hu4kafUbPb6UAnibTP89Ck2/tareas";
+var sgarcia = "/users/iAZytm5WjMVZgS3z2mZqMBLyw4R2/tareas";
+var gbringas = "/users/AWm8lSNtUpTTzjd0MeXc4i6hbt63/tareas";
+var jurbano = "/users/WOcG0OA4MxQNjh2tNdX5s32tXfJ3/tareas";
+var axellopez = "/users/kj3FwMnhzgbnoj78S3I7Q1VRc8G3/tareas";
+var gloriamaria = "/users/VirBuqJMehRUBV0TqtYtP9TLmcE3/tareas";
+var mgonzalez = "/users/GoPRch4FoCQmwaAlnjqFZlLydu02/tareas";
+var rmucino = "/users/I4wCk05gcQRqee0qdaaoNT8Uk782/tareas";
+var arivera = "/users/MltrRLy9O0aPjD5afa49AteJ6fl1/tareas";
+
+
 var hola = "/users";
 console.log(username)
 document.getElementById('nombre').innerHTML = mail;
@@ -68,11 +78,32 @@ export const db = getFirestore();
   onSnapshot(collection(db, holas), callback); 
 
 export const onGetTasks2 = (callback) =>
-  onSnapshot(collection(db, holas), callback);
+  onSnapshot(collection(db, nyzmaya), callback);
 
+  export const onGetTasks3 = (callback) =>
+  onSnapshot(collection(db, sgarcia), callback);
 
-  export const onGetTasks3 = (id) =>
-  getDoc(doc(db, "users", id));
+  export const onGetTasks4 = (callback) =>
+  onSnapshot(collection(db, gbringas), callback);
+
+  export const onGetTasks5 = (callback) =>
+  onSnapshot(collection(db, jurbano), callback);
+
+  export const onGetTasks6 = (callback) =>
+  onSnapshot(collection(db, axellopez), callback);
+
+  export const onGetTasks7 = (callback) =>
+  onSnapshot(collection(db, gloriamaria), callback);
+
+  export const onGetTasks8 = (callback) =>
+  onSnapshot(collection(db, mgonzalez), callback);
+
+  export const onGetTasks9 = (callback) =>
+  onSnapshot(collection(db, rmucino), callback);
+
+  export const onGetTasks10 = (callback) =>
+  onSnapshot(collection(db, arivera), callback);
+ 
 
   
 
