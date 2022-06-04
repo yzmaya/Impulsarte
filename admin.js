@@ -11,6 +11,9 @@ import {
     onGetTasks8,
     onGetTasks9,
     onGetTasks10,
+    onGetTasks11,
+    onGetTasks12,
+    onGetTasks13,
     saveTask,
     deleteTask,
     getTask,
@@ -29,6 +32,9 @@ import {
   const tasksContainer8 = document.getElementById("tasks-container8");
   const tasksContainer9 = document.getElementById("tasks-container9");
   const tasksContainer10 = document.getElementById("tasks-container10");
+  const tasksContainer11 = document.getElementById("tasks-container11");
+  const tasksContainer12 = document.getElementById("tasks-container12");
+  const tasksContainer13 = document.getElementById("tasks-container13");
   let editStatus = false;
   let id = "";
    
@@ -228,6 +234,68 @@ import {
       
     });
 
+
+
+    onGetTasks11((querySnapshot) => {
+      tasksContainer11.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer11.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+
+    onGetTasks12((querySnapshot) => {
+      tasksContainer12.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer12.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+
+    onGetTasks13((querySnapshot) => {
+      tasksContainer13.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer13.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
 
 
 

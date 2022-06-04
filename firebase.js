@@ -46,6 +46,10 @@ var gloriamaria = "/users/VirBuqJMehRUBV0TqtYtP9TLmcE3/tareas";
 var mgonzalez = "/users/GoPRch4FoCQmwaAlnjqFZlLydu02/tareas";
 var rmucino = "/users/I4wCk05gcQRqee0qdaaoNT8Uk782/tareas";
 var arivera = "/users/MltrRLy9O0aPjD5afa49AteJ6fl1/tareas";
+var janzures = "/users/7mAqFc0ZFAbUNnxU0iGNtOGs7oI3/tareas"
+var npererira = "/users/mFSXtWpWTYa4UqGYqp7yS0JqAcq2/tareas"
+var hvivanco = "/users/GYNUsSsb46hOcKxmK1NmE4hZ6P92/tareas"
+
 
 
 var hola = "/users";
@@ -104,6 +108,15 @@ export const onGetTasks2 = (callback) =>
 
   export const onGetTasks10 = (callback) =>
   onSnapshot(collection(db, arivera), callback);
+
+  export const onGetTasks11 = (callback) =>
+  onSnapshot(collection(db, janzures), callback);
+
+  export const onGetTasks12 = (callback) =>
+  onSnapshot(collection(db, npererira), callback);
+
+  export const onGetTasks13 = (callback) =>
+  onSnapshot(collection(db, hvivanco), callback);
  
 
   
