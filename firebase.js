@@ -49,6 +49,14 @@ var arivera = "/users/MltrRLy9O0aPjD5afa49AteJ6fl1/tareas";
 var janzures = "/users/7mAqFc0ZFAbUNnxU0iGNtOGs7oI3/tareas"
 var npererira = "/users/mFSXtWpWTYa4UqGYqp7yS0JqAcq2/tareas"
 var hvivanco = "/users/GYNUsSsb46hOcKxmK1NmE4hZ6P92/tareas"
+var lgranados = "/users/kv5SFy1FdNgXUpLJPZ1RzRg5jti2/tareas"
+var isaldivar = "/users/04yKHiZQtBTSwFegMOxT0JHmTFf1/tareas"
+var irenec = "/users/88rjImpjllhwqu11fWgInxPWlZ72/tareas"
+var mmorales = "/users/jtW8sCGnK0g9ilH6JUoTGi8iFar1/tareas"
+var griselda = "/users/lzOdOsU6z0ZmFralJDVt6oaoAXC3/tareas"
+var imegon = "/users/jPNLmlXkGmezj93DYKI3NMlcMzD2/tareas"
+var amondragon = "/users/FD0sCs80yqgR8vpQeMw5g5EdI3x2/tareas"
+
 
 
 
@@ -117,6 +125,31 @@ export const onGetTasks2 = (callback) =>
 
   export const onGetTasks13 = (callback) =>
   onSnapshot(collection(db, hvivanco), callback);
+
+  export const onGetTasks14 = (callback) =>
+  onSnapshot(collection(db, lgranados), callback);
+
+  export const onGetTasks15 = (callback) =>
+  onSnapshot(collection(db, isaldivar), callback);
+
+  export const onGetTasks16 = (callback) =>
+  onSnapshot(collection(db, irenec), callback);
+
+  export const onGetTasks17 = (callback) =>
+  onSnapshot(collection(db, mmorales), callback);
+
+  export const onGetTasks18 = (callback) =>
+  onSnapshot(collection(db, griselda), callback);
+ 
+
+  export const onGetTasks19 = (callback) =>
+  onSnapshot(collection(db, imegon), callback);
+ 
+
+
+  export const onGetTasks20 = (callback) =>
+  onSnapshot(collection(db, amondragon), callback);
+ 
  
 
   

@@ -29,6 +29,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     var userEmail = document.getElementById('campo_email').value;
     var userPwd = document.getElementById('campo_pwd').value;
   
+  
     firebase.auth().signInWithEmailAndPassword(userEmail, userPwd).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -40,11 +41,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
   
   }
-  
+  var db = firebase.firestore();
   function cuentaNueva(){
   
     var newEmail = document.getElementById('nuevo_email').value;
     var newPwd = document.getElementById('nuevo_pwd').value;
+    var nombre = document.getElementById("nuevo_nombre").value;
+    var negocio = document.getElementById("nuevo_negocio").value;
+    var telefono = document.getElementById("nuevo_telefono").value;
   
     firebase.auth().createUserWithEmailAndPassword(newEmail, newPwd).catch(function(error) {
     // Handle Errors here.

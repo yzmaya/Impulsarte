@@ -14,6 +14,13 @@ import {
     onGetTasks11,
     onGetTasks12,
     onGetTasks13,
+    onGetTasks14,
+    onGetTasks15,
+    onGetTasks16,
+    onGetTasks17,
+    onGetTasks18,
+    onGetTasks19,
+    onGetTasks20,
     saveTask,
     deleteTask,
     getTask,
@@ -35,6 +42,13 @@ import {
   const tasksContainer11 = document.getElementById("tasks-container11");
   const tasksContainer12 = document.getElementById("tasks-container12");
   const tasksContainer13 = document.getElementById("tasks-container13");
+  const tasksContainer14 = document.getElementById("tasks-container14");
+  const tasksContainer15 = document.getElementById("tasks-container15");
+  const tasksContainer16 = document.getElementById("tasks-container16");
+  const tasksContainer17 = document.getElementById("tasks-container17");
+  const tasksContainer18 = document.getElementById("tasks-container18");
+  const tasksContainer19 = document.getElementById("tasks-container19");
+  const tasksContainer20 = document.getElementById("tasks-container20");
   let editStatus = false;
   let id = "";
    
@@ -285,6 +299,143 @@ import {
         const task = doc.data();
         console.log(task);
         tasksContainer13.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+    onGetTasks14((querySnapshot) => {
+      tasksContainer14.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer14.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+    onGetTasks15((querySnapshot) => {
+      tasksContainer15.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer15.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+    onGetTasks16((querySnapshot) => {
+      tasksContainer16.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer16.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+    onGetTasks17((querySnapshot) => {
+      tasksContainer17.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer17.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+    onGetTasks18((querySnapshot) => {
+      tasksContainer18.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer18.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+    onGetTasks19((querySnapshot) => {
+      tasksContainer19.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer19.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+
+    onGetTasks20((querySnapshot) => {
+      tasksContainer20.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer20.innerHTML += `
         <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${task.title}</h3>
       <p>${task.description}</p>
