@@ -41,25 +41,62 @@ firebase.auth().onAuthStateChanged(function(user) {
     });
   
   }
-  var db = firebase.firestore();
+ 
   function cuentaNueva(){
-  
-    var newEmail = document.getElementById('nuevo_email').value;
-    var newPwd = document.getElementById('nuevo_pwd').value;
     var nombre = document.getElementById("nuevo_nombre").value;
+    var nomcomercial = document.getElementById("nombre_comercial").value;
     var negocio = document.getElementById("nuevo_negocio").value;
     var telefono = document.getElementById("nuevo_telefono").value;
+    var rfc = document.getElementById("nuevo_rfc").value;
+    localStorage.setItem('nombre', nombre);
+    localStorage.setItem('nomcomercial', nomcomercial);
+    localStorage.setItem('negocio', negocio);
+    localStorage.setItem('telefono', telefono);
+    localStorage.setItem('rfc', rfc);
+
+    
+
+    var newEmail = document.getElementById('nuevo_email').value;
+    var newPwd = document.getElementById('nuevo_pwd').value;
+  
+
+    if(nombre == ''){
+      alert('necesitas colocar tu nombre para poder continuar');
+       document.getElementById("nuevo_nombre").focus();
+    }else if(nomcomercial == ''){
+      alert('necesitas colocar el nombre comercial de tu negocio para poder continuar');
+      document.getElementById("nombre_comercial").focus();
+    }else if(negocio == ''){
+      alert('necesitas colocar el giro de tu negocio para poder continuar');
+      document.getElementById("nuevo_negocio").focus();
+    }else if(telefono == ''){
+      alert('necesitas colocar el teléfono de tu negocio para poder continuar');
+      document.getElementById("nuevo_telefono").focus();
+    }else if(rfc == ''){
+      alert('necesitas colocar el rfc de tu negocio para poder continuar');
+      document.getElementById("nuevo_rfc").focus();
+    }else if(newEmail == ''){
+      alert('necesitas colocar el correo electrónico de tu negocio para poder continuar');
+      document.getElementById("nuevo_email").focus();
+    }else if(newPwd == ''){
+      alert('necesitas colocar una contraseña en tu cuenta para poder continuar');
+      document.getElementById("nuevo_pwd").focus();
+    }
+    
   
     firebase.auth().createUserWithEmailAndPassword(newEmail, newPwd).catch(function(error) {
     // Handle Errors here.
   
-  
+   
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
   
-    window.alert(errorMessage);
+   // window.alert(errorMessage);
+    
   });
+
+
   }
   
   

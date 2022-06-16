@@ -67,7 +67,7 @@
 
               <form id="task-form">
                 <label for="title">Actividad:</label>
-               
+                
 
                 <select class="form-select" id="task-title">
                   <option>Referencia</option>
@@ -95,12 +95,13 @@
         <div class="col-md-6" id="tasks-container"></div>
       </div>
     </div>
-
+    <div class="col-md-6" id="tasks-containerextra"></div>
     <!-- CUSTOM CODE -->
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-app.min.js" integrity="sha512-Gvs2fg+wkNjydmkwgHwwTkuWlr9Gz0hTjFwJ4InwYwbAA3rtL2kBIHt7YRfwVCdW77QF2Ne2DdHQVCcULM89ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js" integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js" integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
       var firebaseConfig = {
        apiKey: "AIzaSyDpWbhtjciyB8PYvJ0PH1SbheH6TPgfs78",
@@ -113,19 +114,50 @@
    // Initialize Firebase
    firebase.initializeApp(firebaseConfig);
 
-
+   var nombre = localStorage.getItem('nombre');
+var nomcomercial = localStorage.getItem('nomcomercial');
+var negocio = localStorage.getItem('negocio');
+var telefono = localStorage.getItem('telefono');
+var rfc = localStorage.getItem('rfc');
+var db = firebase.firestore();
+console.log(nombre);
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-
 
     if(user != null){
 
     //var email_id = user.email;
     //document.getElementById("info").innerHTML = 'Usuario: <strong>' + email_id + '</strong>'; 
     var uid = user.uid;
+    var ruta = "users/";
     console.log(uid);
+
+  
     
+
+if(nombre == null){
+
+}else{
+  db.collection(ruta).doc(uid).set({
+          nombre: nombre,
+          nomcomercial: nomcomercial,
+          negocio: negocio,
+          telefono: telefono,
+          rfc: rfc
+          
+      })
+      .then(function(docRef) {
+    //      console.log("Document written with ID: ", docRef.id);
+         
+    localStorage.clear();
+     
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
+}
     // document.getElementById("uid").innerHTML = uid; 
+
 
     }
 
@@ -137,6 +169,8 @@
 
   }
 });
+
+
 function logout(){
   firebase.auth().signOut();
   location.href ="index.html"

@@ -3,6 +3,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
 //import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js";
 
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import {
@@ -32,11 +35,16 @@ const firebaseConfig = {
   messagingSenderId: "610928781305",
   appId: "1:610928781305:web:98ac597a62d2d1f428bf28"
 };
+
+var nombre = localStorage.getItem('nombre');
+
+
 var userID = localStorage.getItem("UserID");
-var username = localStorage.getItem("UserName");
-var mail = localStorage.getItem("UserMail");
+
+
 console.log("users/"+userID)
 var holas = "/users/"+userID+"/tareas";
+var holaperfil = "/users/"+userID+"negocio";
 var nyzmaya = "/users/P2ry8hu4kafUbPb6UAnibTP89Ck2/tareas";
 var sgarcia = "/users/iAZytm5WjMVZgS3z2mZqMBLyw4R2/tareas";
 var gbringas = "/users/AWm8lSNtUpTTzjd0MeXc4i6hbt63/tareas";
@@ -56,13 +64,14 @@ var mmorales = "/users/jtW8sCGnK0g9ilH6JUoTGi8iFar1/tareas"
 var griselda = "/users/lzOdOsU6z0ZmFralJDVt6oaoAXC3/tareas"
 var imegon = "/users/jPNLmlXkGmezj93DYKI3NMlcMzD2/tareas"
 var amondragon = "/users/FD0sCs80yqgR8vpQeMw5g5EdI3x2/tareas"
+var pruebas = "/users/nOQszCqK8vUqRZ08RkheqwDibgy2/tareas"
 
-
+//console.log(holaperfil)
 
 
 var hola = "/users";
-console.log(username)
-document.getElementById('nombre').innerHTML = mail;
+console.log(holaperfil)
+document.getElementById('nombre').innerHTML = nombre;
 
 
 
@@ -73,7 +82,20 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore();
 
 
-
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    console.log("firebasejs"+ uid)
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    console.log("usuarno no logueado desde firebasejs");
+  }
+});
 
 
 /**
@@ -89,6 +111,9 @@ export const db = getFirestore();
 
   export const onGetTasks = (callback) =>
   onSnapshot(collection(db, holas), callback); 
+
+  export const onGetPerfil = (callback) =>
+  onSnapshot(collection(db, holaperfil), callback); 
 
 export const onGetTasks2 = (callback) =>
   onSnapshot(collection(db, nyzmaya), callback);
@@ -149,7 +174,8 @@ export const onGetTasks2 = (callback) =>
 
   export const onGetTasks20 = (callback) =>
   onSnapshot(collection(db, amondragon), callback);
- 
+
+
  
 
   
@@ -166,3 +192,9 @@ export const updateTask = (id, newFields) =>
   updateDoc(doc(db, holas, id), newFields);
 
 export const getTasks = () => getDocs(collection(db, userID));
+
+
+
+
+
+

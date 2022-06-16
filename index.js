@@ -7,10 +7,12 @@ import {
   getTask,
   updateTask,
   getTasks,
+  onGetPerfil,
 } from "./firebase.js";
 
 const taskForm = document.getElementById("task-form");
 const tasksContainer = document.getElementById("tasks-container");
+const tasksContainerextra = document.getElementById("tasks-containerextra");
 const tasksContainer2 = document.getElementById("tasks-container2");
 const tasksContainer3 = document.getElementById("tasks-container3");
 let editStatus = false;
@@ -24,6 +26,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   // querySnapshot.forEach((doc) => {
   //   console.log(doc.data());
   // });
+
+
+  
+
 
   onGetTasks((querySnapshot) => {
     tasksContainer.innerHTML = "";
