@@ -71,7 +71,7 @@ import {
         console.log(task);
         tasksContainer2.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -96,7 +96,7 @@ import {
         console.log(task);
         tasksContainer3.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -116,7 +116,7 @@ import {
         console.log(task);
         tasksContainer4.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -138,7 +138,7 @@ import {
         console.log(task);
         tasksContainer5.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -157,7 +157,7 @@ import {
         console.log(task);
         tasksContainer6.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -176,7 +176,7 @@ import {
         console.log(task);
         tasksContainer7.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -196,7 +196,7 @@ import {
         console.log(task);
         tasksContainer8.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -217,7 +217,7 @@ import {
         console.log(task);
         tasksContainer9.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -237,7 +237,7 @@ import {
         console.log(task);
         tasksContainer10.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -258,7 +258,7 @@ import {
         console.log(task);
         tasksContainer11.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -279,7 +279,7 @@ import {
         console.log(task);
         tasksContainer12.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -300,7 +300,7 @@ import {
         console.log(task);
         tasksContainer13.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -319,7 +319,7 @@ import {
         console.log(task);
         tasksContainer14.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -339,7 +339,7 @@ import {
         console.log(task);
         tasksContainer15.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -358,7 +358,7 @@ import {
         console.log(task);
         tasksContainer16.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -377,7 +377,7 @@ import {
         console.log(task);
         tasksContainer17.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -397,7 +397,7 @@ import {
         console.log(task);
         tasksContainer18.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -417,7 +417,7 @@ import {
         console.log(task);
         tasksContainer19.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       
@@ -437,7 +437,7 @@ import {
         console.log(task);
         tasksContainer20.innerHTML += `
         <div class="card card-body mt-2 border-primary">
-      <h3 class="h5">${task.title}</h3>
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>
       <div>
       

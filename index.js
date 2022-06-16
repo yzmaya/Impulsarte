@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
       tasksContainer.innerHTML += `
       <div class="card card-body mt-2 border-primary">
-    <h3 class="h5">${task.title}</h3>
+    <h3 class="h5">${task.cantidad} ${task.title}</h3>
     <p>${task.description}</p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const task = doc.data();
           taskForm["task-title"].value = task.title;
           taskForm["task-description"].value = task.description;
-
+          taskForm["task-number"].value = task.cantidad;
           editStatus = true;
           id = doc.id;
           taskForm["btn-task-form"].innerText = "Actualizar";
@@ -96,14 +96,16 @@ taskForm.addEventListener("submit", async (e) => {
 
   const title = taskForm["task-title"];
   const description = taskForm["task-description"];
+  const cantidad = taskForm["task-number"];
 
   try {
     if (!editStatus) {
-      await saveTask(title.value, description.value);
+      await saveTask(title.value, description.value, cantidad.value);
     } else {
       await updateTask(id, {
         title: title.value,
         description: description.value,
+        cantidad: cantidad.value,
       });
 
       editStatus = false;

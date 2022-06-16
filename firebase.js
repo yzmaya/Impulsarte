@@ -45,7 +45,7 @@ var userID = localStorage.getItem("UserID");
 console.log("users/"+userID)
 var holas = "/users/"+userID+"/tareas";
 var holaperfil = "/users/"+userID+"negocio";
-var nyzmaya = "/users/P2ry8hu4kafUbPb6UAnibTP89Ck2/tareas";
+var nyzmaya = "/users/Oo0NITRIycgYDJSZ5Ivk0aTO0tU2/tareas";
 var sgarcia = "/users/iAZytm5WjMVZgS3z2mZqMBLyw4R2/tareas";
 var gbringas = "/users/AWm8lSNtUpTTzjd0MeXc4i6hbt63/tareas";
 var jurbano = "/users/WOcG0OA4MxQNjh2tNdX5s32tXfJ3/tareas";
@@ -110,12 +110,13 @@ onAuthStateChanged(auth, (user) => {
  * Save a New Task in Firestore
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
+ * @param {string} cantidad the description of the Task
  */
 //export const saveTask = (title, description) =>
   //addDoc(collection(db,  'users'), { title, description });
 
-  export const saveTask = (title, description) =>
-  addDoc(collection(db,  holas),  { title, description });
+  export const saveTask = (title, description, cantidad) =>
+  addDoc(collection(db,  holas),  { title, description, cantidad });
 
   export const onGetTasks = (callback) =>
   onSnapshot(collection(db, holas), callback); 
