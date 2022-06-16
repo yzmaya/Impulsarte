@@ -71,7 +71,9 @@ var pruebas = "/users/nOQszCqK8vUqRZ08RkheqwDibgy2/tareas"
 
 var hola = "/users";
 console.log(holaperfil)
-document.getElementById('nombre').innerHTML = nombre;
+
+
+
 
 
 
@@ -87,9 +89,15 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    console.log("firebasejs"+ uid)
+    const uid = user.email;
+  
     // ...
+
+    if(nombre == null){
+      document.getElementById('nombre').innerHTML = uid;
+    }else{
+      document.getElementById('nombre').innerHTML = nombre;
+    }
   } else {
     // User is signed out
     // ...

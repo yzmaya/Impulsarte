@@ -114,7 +114,7 @@
    // Initialize Firebase
    firebase.initializeApp(firebaseConfig);
 
-   var nombre = localStorage.getItem('nombre');
+var nombre = localStorage.getItem('nombre');
 var nomcomercial = localStorage.getItem('nomcomercial');
 var negocio = localStorage.getItem('negocio');
 var telefono = localStorage.getItem('telefono');
@@ -149,7 +149,7 @@ if(nombre == null){
       .then(function(docRef) {
     //      console.log("Document written with ID: ", docRef.id);
          
-    localStorage.clear();
+    
      
       })
       .catch(function(error) {
