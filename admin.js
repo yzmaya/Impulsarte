@@ -21,6 +21,7 @@ import {
     onGetTasks18,
     onGetTasks19,
     onGetTasks20,
+    onGetTasks21,
     saveTask,
     deleteTask,
     getTask,
@@ -49,6 +50,7 @@ import {
   const tasksContainer18 = document.getElementById("tasks-container18");
   const tasksContainer19 = document.getElementById("tasks-container19");
   const tasksContainer20 = document.getElementById("tasks-container20");
+  const tasksContainer21 = document.getElementById("tasks-container21");
   let editStatus = false;
   let id = "";
    
@@ -436,6 +438,25 @@ import {
         const task = doc.data();
         console.log(task);
         tasksContainer20.innerHTML += `
+        <div class="card card-body mt-2 border-primary">
+      <h3 class="h5">${task.cantidad} ${task.title}</h3>
+      <p>${task.description}</p>
+      <div>
+      
+       
+      </div>
+    </div>`;
+      });
+      
+    });
+
+    onGetTasks21((querySnapshot) => {
+      tasksContainer21.innerHTML = "";
+  
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        console.log(task);
+        tasksContainer21.innerHTML += `
         <div class="card card-body mt-2 border-primary">
       <h3 class="h5">${task.cantidad} ${task.title}</h3>
       <p>${task.description}</p>

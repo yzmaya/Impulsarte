@@ -64,6 +64,8 @@ var mmorales = "/users/jtW8sCGnK0g9ilH6JUoTGi8iFar1/tareas"
 var griselda = "/users/lzOdOsU6z0ZmFralJDVt6oaoAXC3/tareas"
 var imegon = "/users/jPNLmlXkGmezj93DYKI3NMlcMzD2/tareas"
 var amondragon = "/users/FD0sCs80yqgR8vpQeMw5g5EdI3x2/tareas"
+var tpineda = "/users/wW9IARVWvxODFbuYYRJJDZdM8hy2/tareas"
+
 var pruebas = "/users/nOQszCqK8vUqRZ08RkheqwDibgy2/tareas"
 
 //console.log(holaperfil)
@@ -184,6 +186,9 @@ export const onGetTasks2 = (callback) =>
   export const onGetTasks20 = (callback) =>
   onSnapshot(collection(db, amondragon), callback);
 
+
+  export const onGetTasks21 = (callback) =>
+  onSnapshot(collection(db, tpineda), callback);
 
  
 
