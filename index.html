@@ -63,7 +63,8 @@
             <label for="text">Nombre Completo:</label>
             <input type="text" class="form-control" id="nuevo_nombre" placeholder="Captura tu Nombre completo" name="nombre" required>
           </div>
-          <div class="form-group">
+
+<!--          <div class="form-group">
             <label for="text">Nombre Comercial de tu Negocio:</label>
             <input type="text" class="form-control" id="nombre_comercial" placeholder="¿Cuál es el nombre de tu negocio?" name="negocio" required>
           </div>
@@ -79,6 +80,19 @@
             <label for="text">RFC:</label>
             <input type="text" class="form-control" id="nuevo_rfc" placeholder="RFC de tu negocio" name="contacto" required>
           </div>
+
+        -->
+
+          <div class="form-group">
+          <label>Elije con quien vas a reportar tu trabajo :
+            <select class="nieve" name="nieve" id="nieve">
+              <option value=""></option>
+              <option value="tareas">Judith Urbano</option>
+              <option value="tareas2">Luis Ángel Durón</option>
+              <option value="tareas3">Regina</option>
+         
+          </select></label>
+        </div>
             <div class="form-group">
               <label for="email">Correo Electrónico:</label>
               <input type="email" class="form-control" id="nuevo_email" placeholder="Captura tu dirección de email" name="email" required>
@@ -130,7 +144,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-app.min.js" integrity="sha512-Gvs2fg+wkNjydmkwgHwwTkuWlr9Gz0hTjFwJ4InwYwbAA3rtL2kBIHt7YRfwVCdW77QF2Ne2DdHQVCcULM89ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js" integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js" integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
   // Initialize Firebase
@@ -145,7 +159,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  
+  var db = firebase.firestore();
 </script>
 <script src="autenticacionnew.js"></script>
 </body>

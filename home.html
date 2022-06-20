@@ -11,7 +11,7 @@
       href="https://bootswatch.com/5/pulse/bootstrap.min.css"
     />
   </head>
- 
+  
   <!--#f1602e -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
@@ -24,6 +24,7 @@
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link active" > Bienvenido/a  <span id="nombre"></span></a>
+         
         </li>
         <li class="nav-item">
         <!--  <a class="nav-link" href="admin.html">Reporte Semanal</a> -->
@@ -92,7 +93,7 @@
                   class="form-control mb-3"
                   placeholder="nombre de invitado, referencia para quien, cuanto $ generaste"
                 ></textarea>
-
+                
                 <button class="btn btn-primary" id="btn-task-form">Guardar</button>
               </form>
             </div>
@@ -113,10 +114,12 @@
         <div class="container">
           <div class="row row-30">
             <div class="col-md-4 col-xl-5">
-              <div class="pr-xl-4"><a target="_blank" class="brand" href="https://www.facebook.com/webappsandchatbots"><img class="circle" src="logo.png" alt="" width="140" height="57" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-                <p style="color: white;">Este Proyecto es patrocinado por Web Apps and Chatbots </p>
+           
+                <a target="_blank" href="https://www.facebook.com/webappsandchatbots"><p style="color: white;">Este Proyecto es patrocinado por Web Apps and Chatbots </p></a>
                 <!-- Rights-->
-                <p class="rights"><span>©  </span><span class="copyright-year">2022</span><span> </span><span>WANC</span><span>. </span><span>All Rights Reserved.</span></p>
+               <a href="https://wa.me/525529107792" ><button class="btn btn-primary" id="">Contactanos</button></a>
+             
+                <p class="rights"><span>©  </span><span class="copyright-year">2022</span><span> </span><span><a href="https://cyapp.io/" target="_blank">cyapp.io</a></span><span>. </span><span>All Rights Reserved.</span></p>
               </div>
             </div>
             <div class="col-md-4">
@@ -153,8 +156,9 @@ var nomcomercial = localStorage.getItem('nomcomercial');
 var negocio = localStorage.getItem('negocio');
 var telefono = localStorage.getItem('telefono');
 var rfc = localStorage.getItem('rfc');
+var destino = localStorage.getItem('destino');
 var db = firebase.firestore();
-console.log(nombre);
+
    firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
 
@@ -164,8 +168,9 @@ console.log(nombre);
     //document.getElementById("info").innerHTML = 'Usuario: <strong>' + email_id + '</strong>'; 
     var uid = user.uid;
     var ruta = "users/";
+   
     console.log(uid);
-
+   
   
     
 
@@ -177,12 +182,15 @@ if(nombre == null){
           nomcomercial: nomcomercial,
           negocio: negocio,
           telefono: telefono,
-          rfc: rfc
+          rfc: rfc,
+          destino: destino
           
       })
       .then(function(docRef) {
-    //      console.log("Document written with ID: ", docRef.id);
-         
+         // console.log("Document written with ID: ");
+          
+         localStorage.clear();
+
     
      
       })
@@ -207,6 +215,7 @@ if(nombre == null){
 
 function logout(){
   firebase.auth().signOut();
+  
   location.href ="index.html"
 }
  

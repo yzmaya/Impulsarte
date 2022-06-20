@@ -6,8 +6,9 @@ import {
   deleteTask,
   getTask,
   updateTask,
+  onGetTareas,
   getTasks,
-  onGetPerfil,
+  
 } from "./firebase.js";
 
 const taskForm = document.getElementById("task-form");
@@ -17,7 +18,7 @@ const tasksContainer2 = document.getElementById("tasks-container2");
 const tasksContainer3 = document.getElementById("tasks-container3");
 let editStatus = false;
 let id = "";
-
+var userID = localStorage.getItem("UserID");
 
 
 
@@ -29,7 +30,33 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
 
   
+  onGetTareas((querySnapshot) => {
+   // tasksContainer2.innerHTML = "";
 
+    querySnapshot.forEach((doc) => {
+      const task = doc.data();
+     // console.log(doc.data());
+
+
+      
+   if(doc.id == userID){
+     // console.log('a')
+      document.getElementById('nombre').innerHTML = doc.data().nombre;
+   
+      
+     }else{
+      //console.log('b')
+
+    
+    }
+
+    });
+
+  
+
+ 
+    
+  });
 
   onGetTasks((querySnapshot) => {
     tasksContainer.innerHTML = "";
@@ -97,15 +124,17 @@ taskForm.addEventListener("submit", async (e) => {
   const title = taskForm["task-title"];
   const description = taskForm["task-description"];
   const cantidad = taskForm["task-number"];
-
+  const uid = document.getElementById('nombre').innerHTML;
+ 
   try {
     if (!editStatus) {
-      await saveTask(title.value, description.value, cantidad.value);
+      await saveTask(title.value, description.value, cantidad.value, uid);
     } else {
       await updateTask(id, {
         title: title.value,
         description: description.value,
         cantidad: cantidad.value,
+        
       });
 
       editStatus = false;

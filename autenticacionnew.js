@@ -10,8 +10,26 @@ firebase.auth().onAuthStateChanged(function(user) {
         var correo = user.email;
       localStorage.setItem("UserID", usuario);
       localStorage.setItem("UserMail", correo);
-      window.location.href = 'home.html';
-  
+     
+      
+   
+
+      var docRef = db.collection("users").doc(usuario);
+
+      docRef.get().then((doc) => {
+          if (doc.exists) {
+              console.log("Document data:", doc.data().destino);
+              localStorage.setItem('destino', doc.data().destino);
+
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+          }
+
+          window.location.href = 'home.html';
+      }).catch((error) => {
+          console.log("Error getting document:", error);
+      });
       if(user != null){
   
       }
@@ -45,15 +63,17 @@ firebase.auth().onAuthStateChanged(function(user) {
  
   function cuentaNueva(){
     var nombre = document.getElementById("nuevo_nombre").value;
-    var nomcomercial = document.getElementById("nombre_comercial").value;
-    var negocio = document.getElementById("nuevo_negocio").value;
-    var telefono = document.getElementById("nuevo_telefono").value;
-    var rfc = document.getElementById("nuevo_rfc").value;
+  //  var nomcomercial = document.getElementById("nombre_comercial").value;
+  //  var negocio = document.getElementById("nuevo_negocio").value;
+  //  var telefono = document.getElementById("nuevo_telefono").value;
+  //  var rfc = document.getElementById("nuevo_rfc").value;
+    var destino = document.getElementById("nieve").value;
     localStorage.setItem('nombre', nombre);
-    localStorage.setItem('nomcomercial', nomcomercial);
-    localStorage.setItem('negocio', negocio);
-    localStorage.setItem('telefono', telefono);
-    localStorage.setItem('rfc', rfc);
+  //  localStorage.setItem('nomcomercial', nomcomercial);
+  //  localStorage.setItem('negocio', negocio);
+  //  localStorage.setItem('telefono', telefono);
+  //  localStorage.setItem('rfc', rfc);
+    localStorage.setItem('destino', destino);
 
     
 
@@ -61,33 +81,36 @@ firebase.auth().onAuthStateChanged(function(user) {
     var newPwd = document.getElementById('nuevo_pwd').value;
   
 
-    if(nombre == ''){
+   if(nombre == ''){
       alert('necesitas colocar tu nombre para poder continuar');
        document.getElementById("nuevo_nombre").focus();
-    }else if(nomcomercial == ''){
-      alert('necesitas colocar el nombre comercial de tu negocio para poder continuar');
-      document.getElementById("nombre_comercial").focus();
-    }else if(negocio == ''){
-      alert('necesitas colocar el giro de tu negocio para poder continuar');
-      document.getElementById("nuevo_negocio").focus();
-    }else if(telefono == ''){
-      alert('necesitas colocar el teléfono de tu negocio para poder continuar');
-      document.getElementById("nuevo_telefono").focus();
-    }else if(rfc == ''){
-      alert('necesitas colocar el rfc de tu negocio para poder continuar');
-      document.getElementById("nuevo_rfc").focus();
+    //}else if(nomcomercial == ''){
+      //alert('necesitas colocar el nombre comercial de tu negocio para poder continuar');
+      //document.getElementById("nombre_comercial").focus();
+    //}else if(negocio == ''){
+      //alert('necesitas colocar el giro de tu negocio para poder continuar');
+      //document.getElementById("nuevo_negocio").focus();
+    //}else if(telefono == ''){
+      //alert('necesitas colocar el teléfono de tu negocio para poder continuar');
+      //document.getElementById("nuevo_telefono").focus();
+    //}else if(rfc == ''){
+      //alert('necesitas colocar el rfc de tu negocio para poder continuar');
+      //document.getElementById("nuevo_rfc").focus();
     }else if(newEmail == ''){
       alert('necesitas colocar el correo electrónico de tu negocio para poder continuar');
       document.getElementById("nuevo_email").focus();
-    }else if(newPwd == ''){
+  }else if(newPwd == ''){
       alert('necesitas colocar una contraseña en tu cuenta para poder continuar');
       document.getElementById("nuevo_pwd").focus();
-    }
+    }else if(destino == ''){
+      alert('necesitamos saber con quien reportaras tu trabajo');
+      document.getElementById("nieve").focus();
+    }else{
     
   
     firebase.auth().createUserWithEmailAndPassword(newEmail, newPwd).catch(function(error) {
     // Handle Errors here.
-  
+    
    
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -96,7 +119,7 @@ firebase.auth().onAuthStateChanged(function(user) {
    // window.alert(errorMessage);
     
   });
-
+    }
 
   }
   
