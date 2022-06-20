@@ -26,7 +26,7 @@ firebase.auth().onAuthStateChanged(function(user) {
               console.log("No such document!");
           }
 
-          window.location.href = 'home.html';
+         window.location.href = 'home.html';
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
