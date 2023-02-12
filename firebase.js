@@ -45,6 +45,7 @@ var userID = localStorage.getItem("UserID");
 var destination = localStorage.getItem("destino");
 
 console.log("users/"+userID)
+console.log(destination+"que?")
 
 //var holaperfil = "/users/"+userID+"negocio";
 
